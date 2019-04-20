@@ -166,6 +166,8 @@ class ProductAdapter extends AbstractMagentoAdapter {
     if(this.config.product && JSON.parse(this.config.product.excludeDisabledProducts)) {
       searchCriteria += '&searchCriteria[filterGroups][0][filters][0][field]=status'+
                         '&searchCriteria[filterGroups][0][filters][0][value]=1';
+      searchCriteria += '&searchCriteria[filterGroups][0][filters][0][field]=approval'+
+                        '&searchCriteria[filterGroups][0][filters][0][value]=2';
     }
 
     if(typeof context.stock_sync !== 'undefined')
